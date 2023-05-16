@@ -9,7 +9,7 @@
 
             @if ($errors->any())
                 <div class="alert alert-danger" role="alert">
-                    Username or password is wrong!
+                    Email or password is wrong!
                 </div>
             @endif
 
