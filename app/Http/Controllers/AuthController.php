@@ -21,7 +21,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ], [
                 'email.required' => 'Email must be filled!',
-                'password.required' => 'Passowrd must be filled!'
+                'password.required' => 'Password must be filled!'
             ]);
 
         Auth::attempt($request->only('email', 'password'));
@@ -31,7 +31,7 @@ class AuthController extends Controller
             return redirect()->route('ticket');
 
         } else {
-            return redirect()->back()->withErrors('Username or password is wrong!');
+            return redirect()->back()->withErrors('Email or password is wrong!');
         }
 
 
