@@ -66,6 +66,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3 text-center">
+                                <a href="/login" type="a" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
