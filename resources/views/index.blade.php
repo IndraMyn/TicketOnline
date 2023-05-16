@@ -61,6 +61,7 @@
                                 <h1>Your Id Ticket</h1>
                                 <input style="text-align: center" class="form-control form-control-large" readonly id="copy" value="{{ Session::get('success') }}" />
                                 <a href="#" onclick="handleCopy()">copy</a>
+                                <a href={{ url("ticket-pdf", Session::get('success')) }} target="_BLANK">download</a>
                             </div>
                         </div>
                     </div>

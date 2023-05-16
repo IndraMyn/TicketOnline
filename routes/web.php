@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CheckoutController::class, 'index'])->name('index');
 Route::post('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/ticket-pdf/{ticketId}', [CheckoutController::class, 'ticketPdf']);
 
 Route::get('/login', [AuthController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);

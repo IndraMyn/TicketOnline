@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Checkout;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
@@ -102,6 +103,12 @@ class CheckoutController extends Controller
         $checkout->delete();
 
         return redirect()->back()->with('success', 'Successfully');
+    }
+
+    public function ticketPDF($ticketId)
+    {
+        $pdf = Pdf::loadview('pages.ticket-pdf', ['ticketId' => $ticketId]);
+        return $pdf->download('Ticket.pdf');
     }
 
 }
