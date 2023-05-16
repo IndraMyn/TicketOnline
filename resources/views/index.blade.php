@@ -59,7 +59,8 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <h1>Your Id Ticket</h1>
-                                <h3>{{ Session::get('success') }}</h3>
+                                <input style="text-align: center" class="form-control form-control-large" readonly id="copy" value="{{ Session::get('success') }}" />
+                                <a href="#" onclick="handleCopy()">copy</a>
                             </div>
                         </div>
                     </div>
@@ -68,5 +69,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function handleCopy() {
+            // Get the text field
+            var copyText = document.getElementById("copy");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Success copy ID Ticket");
+        }
+    </script>
 
 @endsection
